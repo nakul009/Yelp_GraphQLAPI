@@ -2,19 +2,30 @@
   "name": "pet_house",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.jsc",
   "dependencies": {
     "apollo-server": "^2.9.7",
     "express": "^4.17.1",
+    "fs": "0.0.1-security",
     "graphql": "^14.5.8",
     "graphql-scalars": "^1.0.4",
     "graphql-tools": "^4.0.6",
-    "nedb-promise": "^2.0.1",
-    "node": "^12.13.0"
+    "nedb-promises": "^4.0.0",
+    "node": "^12.13.0",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^4.2.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.3"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "PORT=4005 jest",
+    "dev": "nodemon server.js",
+    "deploy": "sh ./deploy.sh",
+    "start": "NODE_ENV=production node server.js",
+    "docker:dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d",
+    "docker:prod": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d"
   },
   "author": "Nakul Sahayata",
   "license": "ISC"
