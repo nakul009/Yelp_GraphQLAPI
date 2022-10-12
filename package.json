@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.jsc",
   "dependencies": {
-    "apollo-server": "^2.9.7",
+    "apollo-server": "^2.25.4",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "graphql": "^14.5.8",
